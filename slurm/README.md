@@ -30,7 +30,7 @@ script with details specific to your use case before submitting your job.
 | [Advanced scripts](./1_Advanced)                                                                        | A directory containing batch scripts for more advanced use cases, including job arrays, parallel computing, and utilizing the scavenger partition (Coming Soon) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[Job Arrays](./1_Advanced/JobArrays)</li></ul>                                      | Coming Soon |
 | [Application Specific scripts](./2_ApplicationSpecific)                                                 | A directory containing batch scripts for a range of applications with specific setup requirements. You will not find an example script for every piece of software installed on CCR's systems |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[AlphaFold](./2_ApplicationSpecific/alphafold)</li></ul>                            | AlphaFold example |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;•[AlphaFold](./2_ApplicationSpecific/alphafold)                            | AlphaFold example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[HuggingFace](./2_ApplicationSpecific/huggingface)</li></ul>                        | HuggingFace example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[LSDYNA](./2_ApplicationSpecific/lsdyna)</li></ul>                                  | LSDYNA example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[MATLAB](./2_ApplicationSpecific/matlab)</li></ul>                               | The MATLAB directory includes example scripts for running serial, multithreaded, and GPU MATLAB jobs |
