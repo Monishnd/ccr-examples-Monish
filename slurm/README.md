@@ -25,7 +25,7 @@ script with details specific to your use case before submitting your job.
 | Topic                                                                                                   | Description |
 |---------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------- 
 | [Get Started](#get-started)                                                                             | Somewhere to get started |
-| - [Basic Example](./BasicExample.sh)                                                                      | A simple template for submitting a basic job in an HPC environment |
+| <ul><li>[Basic Example](./BasicExample.sh)</li></ul>                                                                      | A simple template for submitting a basic job in an HPC environment |
 | - [Commonly used Slurm directives](./slurm-options.sh)                                                    | A comprehensive Slurm script with commonly used directives |
 | [Advanced scripts](./1_Advanced)                                                                        | A directory containing batch scripts for more advanced use cases, including job arrays, parallel computing, and utilizing the scavenger partition (Coming Soon) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Job Arrays](./1_Advanced/JobArrays)                                      | Coming Soon |
