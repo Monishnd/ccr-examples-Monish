@@ -33,12 +33,12 @@ script with details specific to your use case before submitting your job.
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[AlphaFold](./2_ApplicationSpecific/alphafold)</li></ul>                            | AlphaFold example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[HuggingFace](./2_ApplicationSpecific/huggingface)</li></ul>                        | HuggingFace example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[LSDYNA](./2_ApplicationSpecific/lsdyna)</li></ul>                                  | LSDYNA example |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[MATLAB](./2_ApplicationSpecific/matlab)                                  | The MATLAB directory includes example scripts for running serial, multithreaded, and GPU MATLAB jobs |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[MATLAB](./2_ApplicationSpecific/matlab)</li></ul>                               | The MATLAB directory includes example scripts for running serial, multithreaded, and GPU MATLAB jobs |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [MATLAB/Serial](./2_ApplicationSpecific/matlab/serial)        | Example Serial MATLAB job |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [MATLAB/Multithreaded](./2_ApplicationSpecific/matlab/multithreaded)| Example Multithreaded job for parallel computing |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [MATLAB/GPU](./2_ApplicationSpecific/matlab/GPU)              | MATLAB script that performs a matrix decomposition using a GPU |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[NiftyPet](./2_ApplicationSpecific/niftypet)</li></ul>                              | Slurm job example for running a NiftyPET Jupyter notebook demo |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[PetSC-Custom_Compile](./2_ApplicationSpecific/petsc-custom-compile)</li></ul>      | Example of building PETSc with EasyBuild via a Slurm job |
-| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Python](./2_ApplicationSpecific/python)                                  | A directory containing examples of serial Python job, with multithreaded and GPU examples coming soon |
+| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[Python](./2_ApplicationSpecific/python)</li></ul>                                  | A directory containing examples of serial Python job, with multithreaded and GPU examples coming soon |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- [Python/Serial](./2_ApplicationSpecific/python/serial)        | Serial Python program along with the corresponding Slurm script, which can be customized to run a serial Python job |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<ul><li>[Sentence-Transformers](./2_ApplicationSpecific/sentence-transformers)</li></ul>    | Example Sentence-Transformers job |
