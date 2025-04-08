@@ -27,11 +27,11 @@ script with details specific to your use case before submitting your job.
 | [Get Started](#get-started)                                                                             | Somewhere to get started |
 | [Basic Example](./BasicExample.sh)                                                                      | A simple template for submitting a basic job in an HPC environment |
 | [Commonly used Slurm directives](./slurm-options.sh)                                                    | A comprehensive Slurm script with commonly used directives |
----
-| [**Advanced scripts**](./1_Advanced)                                                                        | A directory containing batch scripts for more advanced use cases, including job arrays, parallel computing, and utilizing the scavenger partition (Coming Soon) |
+| &nbsp;                             | &nbsp;
+| [Advanced scripts](./1_Advanced)                                                                        | A directory containing batch scripts for more advanced use cases, including job arrays, parallel computing, and utilizing the scavenger partition (Coming Soon) |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Job Arrays](./1_Advanced/JobArrays)                                      | Coming Soon |
----
-| [**Application Specific scripts**](./2_ApplicationSpecific)                                                 | A directory containing batch scripts for a range of applications with specific setup requirements. You will not find an example script for every piece of software installed on CCR's systems |
+| &nbsp;                             | &nbsp;
+| [Application Specific scripts](./2_ApplicationSpecific)                                                 | A directory containing batch scripts for a range of applications with specific setup requirements. You will not find an example script for every piece of software installed on CCR's systems |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[AlphaFold](./2_ApplicationSpecific/alphafold)                            | AlphaFold example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[HuggingFace](./2_ApplicationSpecific/huggingface)                        | HuggingFace example |
 | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[LSDYNA](./2_ApplicationSpecific/lsdyna)                                  | LSDYNA example |
