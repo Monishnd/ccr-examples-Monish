@@ -2,6 +2,10 @@
 
 This runs the full NiftyPET juptyer notebook demo in a slurm job.
 
+## Placeholders:
+
+Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the /slurm [README](../../README.md) for details and options.
+
 ## How to use
 
 1. Download raw data files to your working directory:
@@ -29,8 +33,3 @@ $ sbatch niftypet-demo-slurm.sh
 Copy the demo.nbconvert.ipynb file to your local machine and view it here:
 
 https://jsvine.github.io/nbpreview/
-
-## Placeholders:
-
-Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the 2_ApplicationSpecific 
-[README](../README.md) for details and options.

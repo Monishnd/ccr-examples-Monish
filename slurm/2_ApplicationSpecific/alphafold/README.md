@@ -16,5 +16,4 @@ run_alphafold.py. They will have the same CLI arguments.
 
 ## Placeholders:
 
-Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the 2_ApplicationSpecific 
-[README](../README.md) for details and options.
+Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the /slurm [README](../../README.md) for details and options.

@@ -4,8 +4,7 @@ This directory includes examples of serial, multithreaded, and GPU  MATLAB jobs.
 
 ## Placeholders:
 
-Portions of the example batch scripts contain placeholders, denoted by square brackets. Refer to the 2_ApplicationSpecific 
-[README](../README.md) for details and options.
+Portions of the example batch scripts contain placeholders, denoted by square brackets. Refer to the /slurm [README](../../README.md) for details and options.
 
 ## Serial MATLAB job ([serial/](./serial))
 

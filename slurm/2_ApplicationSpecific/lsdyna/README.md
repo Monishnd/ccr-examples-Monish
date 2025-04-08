@@ -1,7 +1,6 @@
 # Example lsdyna job
 
-Provided are two example lsdyna slurm jobs: [lsdyna.sh](./lsdyna.sh) a script for non-parallel processing, and 
-[lsdyna_mpp.sh](./lsdyna_mpp.sh) a script for massively parallel processing.
+Provided are two example lsdyna slurm jobs: [lsdyna.sh](./lsdyna.sh) a script for non-parallel processing, and [lsdyna_mpp.sh](./lsdyna_mpp.sh) a script for massively parallel processing.
 
 LS-DYNA is now part of the Ansys software bundle. To load the module, use `module load ansys/2023R1` The lsdyna executables do not show up in the path any longer. To use them properly, you'll 
 need to use these commands:
@@ -15,5 +14,4 @@ Please refer to the Ansys LS-DYNA [manuals](https://lsdyna.ansys.com/manuals/) f
 
 ## Placeholders:
 
-Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the 2_ApplicationSpecific 
-[README](../README.md) for details and options.
+Portions of this example batch script contain placeholders, denoted by square brackets. Refer to the /slurm [README](../../README.md) for details and options.
