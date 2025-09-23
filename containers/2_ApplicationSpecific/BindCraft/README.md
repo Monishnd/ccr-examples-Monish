@@ -197,7 +197,7 @@ See the [EXAMPLE file](./EXAMPLE.md) for more info.
 ## Sample Slurm scripts
 
 ### x86_64 examples
-[BindCraft Slurm example script](https://raw.githubusercontent.com/tonykew/ccr-examples/refs/heads/BindCraft/containers/2_ApplicationSpecific/BindCraft/slurm_BindCraft_example.bash)
+[BindCraft Slurm example script](https://raw.githubusercontent.com/tonykew/ccr-examples/refs/heads/BindCraft/containers/2_ApplicationSpecific/BindCraft/slurm_BindCraft_example.bash) 
 [BindCraft with PyRosetta Slurm example script](https://raw.githubusercontent.com/tonykew/ccr-examples/refs/heads/BindCraft/containers/2_ApplicationSpecific/BindCraft/slurm_BindCraft_with_PyRosetta_example.bash)
 
 ## Documentation Resources
