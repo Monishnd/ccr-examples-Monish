@@ -1,4 +1,4 @@
-## Example Python Container
+# Introductory Python Container
 If you'd like to utilize a newer version of Python than what is installed in CCR's software repository or your workflow requires the use of GPUs, utilizing Python in a container environment is the ideal choice.
 
 This tutorial demonstrates how to download a Python Docker container, convert it to an Apptainer file, and run a simple script to extract the Python version.
@@ -30,20 +30,20 @@ CCRusername@cpn-h23-04:~$ export APPTAINER_CACHEDIR=/projects/academic/[YourGrou
    
 4. Pull the specified Docker Python Image
    
-Use the ```apptainer pull``` command, specifying the target container file to be ```python.sif```. ```docker://python:3``` is where the specified Python image is stored.
+Use the `apptainer pull` command, specifying the target container file to be `python.sif`. `docker://python:3` is where the specified Python image is stored.
 ```
 apptainer pull python.sif docker://python:3
 ```
 
 5. Run script in container
 
-```print_version.py``` script:
+``print_version.py`` script:
 ```
 import sys
 
 print(sys.version)
 ```
-In this example, we are using ```print_version.py```, a Python script that simply prints the version of Python.
+In this example, we are using `print_version.py`, a Python script that simply prints the version of Python.
 
 ```
 apptainer exec python.sif python print_version.py
