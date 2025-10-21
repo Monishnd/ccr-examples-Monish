@@ -3,7 +3,7 @@
  This directory includes an [example](./example.sh) script that shows how to run a Job Array on CCR's clusters. Be sure to modify parts of the script to suit your specific needs.
 
 ## What Are Job Arrays
-Job arrays let you submit multiple similar jobs using a single Slurm Script. Each job in the array shares the same resource requests (as specified in the .sh file).
+Job Arrays let you submit multiple similar jobs using a single Slurm Script. Each job in the array shares the same resource requests (as specified in the .sh file).
 
 ## Specifying Arrays
 The resource flag `--array` sets a job array with specified index values to be submitted. The formatting for this is as follows:  
