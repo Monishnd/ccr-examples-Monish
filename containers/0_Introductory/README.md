@@ -43,7 +43,7 @@ apptainer pull python.sif docker://python:3
 
 5. Run script in container
 
-In this example, we are using `print_version.py`, a Python script that simply prints the version of Python.
+In this example, we are using [`print_version.py`](./print_version.py), a Python script that simply prints the version of Python. Ensure you've copied the `print_version.py` file to your build directory.
 
 ```
 apptainer exec python.sif python print_version.py
