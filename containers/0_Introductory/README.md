@@ -27,7 +27,7 @@ CCRusername@cpn-d01-06:~$
 
 2. Navigate to your build directory & set a temp directory for cache
    
-You should now be on the compute node allocated to you. In this example we're using our project directory for our build directory. Ensure you've placed your `python.sif` and `print_version.py` file in your build directory
+You should now be on the compute node allocated to you. In this example we're using our project directory for our build directory.
 ```
 CCRusername@cpn-d01-06:~$ cd /projects/academic/[YourGroupName]/[CCRusername]  
 CCRusername@cpn-d01-06:~$ mkdir cache  
