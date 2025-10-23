@@ -18,7 +18,7 @@ On the contrary, you should not install software packages in your own space for 
 1. If you need a different release version (CCR Staff: Not completely sure about this)
 2. If you need a software package built using a different compiler, MPI or CUDA implementation
 
-Users can request software be installed by CCR staff by submitting a new issue in our software-layer GitHub respository. More information can be found [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#software-build-requests)
+Users can request software be installed by CCR staff by submitting a new issue in our software-layer GitHub respository. More information can be found [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#software-build-requests).
 
 When in doubt, please ask [CCR Help](https://docs.ccr.buffalo.edu/en/latest/help/) for advice.
 
@@ -30,6 +30,6 @@ This directory contains an elementary example for users to get started on buildi
 
 Coming Soon
 
-## Application Specific ([2_ApplicationSpecific](2_ApplicationSpecifc))
+## Application Specific ([2_ApplicationSpecific](2_ApplicationSpecific))
 
 This directory contains examples used to build specific applications like Orca, Gaussian, etc. with EasyBuild. A [table](./2_ApplicationSpecific/README.md#table-of-topics) of available examples is provided for easier navigation and reference.
