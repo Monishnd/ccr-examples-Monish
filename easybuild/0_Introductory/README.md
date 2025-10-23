@@ -4,7 +4,7 @@ In this example, we'll go through the process of rebuilding `SAMtools-v1.18`, wh
 
 ## How to Rebuild
 
-**Note:* When using Easybuild, do NOT use the CCR login nodes. Always use a compile node or do this from a compute node in an OnDemand desktop session or interactive job. See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). These installations can use a decent amount of disk space so we recommend you use your project directory for all software installations.
+**Note:** When using Easybuild, do NOT use the CCR login nodes. Always use a compile node or do this from a compute node in an OnDemand desktop session or interactive job. See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). These installations can use a decent amount of disk space so we recommend you use your project directory for all software installations.
 
 1. First, start by loading the Easybuild module and search for the existing `SAMtools-1.18-GCC-12.3.0` Easybuild (EB) recipe:
 
@@ -17,7 +17,7 @@ CCRusername@compile ~ $ eb --search samtools-1.18
 
 2. To attempt to install this, we must make a copy of the existing EB recipe and modify it. The output above shows us where the EB recipe files are stored so we can easily copy to our home directory. **NOTE:** You must change the name of the EB recipe when you copy it, updating the toolchain version.
 
-Here we update the name of the EB recipe from `SAMtools-1.18-GCC-12.3.0.eb` to `SAMtools-1.18-GCC-11.2.0.eb`. If you were to also change the version of the software package you're attempting to install, you need to change that in the EB recipe file name as well. In this example, we're not doing that.
+    Here we update the name of the EB recipe from `SAMtools-1.18-GCC-12.3.0.eb` to `SAMtools-1.18-GCC-11.2.0.eb`. If you were to also change the version of the software package you're attempting to install, you need to change that in the EB recipe file name as well. In this example, we're not doing that.
 
 ```
 CCRusername@compile ~ $ cp /cvmfs/soft.ccr.buffalo.edu/versions/2023.01/easybuild/software/Core/easybuild/4.9.4/easybuild/easyconfigs/s/SAMtools/SAMtools-1.18-GCC-12.3.0.eb SAMtools-1.18-GCC-11.2.0.eb
@@ -43,8 +43,8 @@ dependencies = [
 ]
 ```
 
-How do we figure out what CCR has installed? 
-We can look for an existing SAMtools recipe built with GCC 11.2.0 and replicate its dependency section the same way we changed the toolchain line.
+How do we figure out what CCR has installed?
+We can look for the existing SAMtools version in `ccrsoft/2023.01` recipe built with `GCC 11.2.0` and replicate its dependency section the same way we         changed the toolchain line.
 
 **Important:** For some software installations, you will have to do the manual process of running module spider for each dependency. If the dependency isn't installed yet in the CCR software repository, Easybuild will try to build it. For the dependencies that ARE installed, we must match up the version in CCR's repository so that we're not building a second version for no reason.
 
@@ -84,7 +84,7 @@ No missing modules!
 
 6. Easybuild is finding that all the dependencies are met and nothing else needs to be built so we can move forward with the install. Remove the dry run option, `-M`, and start the installation.
 
-**Important:** Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the --robot option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
+    **Important:** Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the --robot option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
 
 ```
 CCRusername@compile ~ $ eb SAMtools-1.18-GCC-11.2.0.eb
