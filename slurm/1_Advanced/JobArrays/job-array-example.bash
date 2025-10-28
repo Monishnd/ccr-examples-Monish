@@ -19,7 +19,7 @@
 #SBATCH --nodes=1
 
 ##   Specify the number of tasks (for parallelism)
-#SBATCH --ntasks-per-node=8
+#SBATCH --ntasks-per-node=4
 
 #SBATCH --job-name="test-array"
 
