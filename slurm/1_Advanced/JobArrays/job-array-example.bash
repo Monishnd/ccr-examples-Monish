@@ -24,7 +24,7 @@
 #SBATCH --job-name="test-array"
 
 ##  Specify what jobs in the array will run
-#SBATCH --array=0-4
+#SBATCH --array=0-3
 
 ##  Output files format
 #SBATCH --output="slurm-%A_%a.out"
