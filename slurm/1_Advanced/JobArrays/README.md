@@ -12,7 +12,6 @@ The resource flag `--array` sets a job array with specified index values to be s
 #SBATCH --array=1,3,5,7  #  Submits a job array with the index values of 1, 3, 5, and 7.
 ```
 
-Note: The max amount of tasks that can run at a time depends on the partition it's being run on. For example, only 4 tasks can run simutaneously per user using the debug partition, but on the general-compute partition, up to 1000 tasks can be ran simutaneously per user. For job arrays larger than these, we can limit the amount of tasks running at once with the `%` operator. For example, if we submit `#SBATCH --array=0-100%4`, Slurm will run the first four tasks. When one finishes, the next task in the array will start automatically. For more information on partition limits, go to the second table [here](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#slurm-directives-partitions-qos).
 ## Using Array IDs
 As shown in [job-array-example.bash](./job-array-example.bash), the environment variables $SLURM_ARRAY_JOB_ID and $SLURM_ARRAY_TASK_ID can be used in the body of the batch script and passed to other commands such as `srun` or in the case of this example, `echo`. However, environment variables can NOT be used in `#SBATCH` directives such as `--output` and `--error`. Instead, you must use these format symbols to specify unique output file names:
 
@@ -56,5 +55,5 @@ Hello World from job 22244918, task 3 on node:cpn-h23-36.core.ccr.buffalo.edu
 
 
   ## Learn More
-- [Our Documentation](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#job-arrays)
+- [CCR's Documentation](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#job-arrays)
 - [Slurm Documentation](https://slurm.schedmd.com/job_array.html)
