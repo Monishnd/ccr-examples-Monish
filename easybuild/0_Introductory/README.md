@@ -109,7 +109,6 @@ CCRusername@compile ~ $ eb SAMtools-1.18-GCC-11.2.0.eb
 == Results of the build can be found in the log file(s) ...
 
 == Build succeeded for 1 out of 1
-== Results of the build can be found in the lof file (s)
 == Temporary log file(s) /tmp/eb-allkgxg7/easybuild-6mhr_wsh.log* have been removed.
 == Temporary directory /tmp/eb-allkgxg7 has been removed.
 ```
