@@ -11,9 +11,7 @@ Please refer to our [container documentation](https://docs.ccr.buffalo.edu/en/la
 **Note**: Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container. We recommend requesting an interactive job on a compute node to conduct this build process.
 See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
-`
-salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell
-`
+`salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell`
 
 sample output:
 ```
@@ -27,9 +25,7 @@ salloc: Nodes cpn-d01-06 are ready for job
 
 
 Once the requested node is available, use the `srun` command to login to the compute node:
-`
-srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
-`
+`srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login`
 
 sample output:
 `CCRUsername@cpn-d01-06:~$ `
@@ -56,32 +52,16 @@ apptainer pull python.sif docker://python:3
 In this example, we are using [`print_version.py`](./print_version.py), a Python script that simply prints the version of Python. Ensure you've copied the `print_version.py` file to your build directory. 
 
 Run the following command:
-`
-apptainer exec python.sif python print_version.py
-`
+`apptainer exec python.sif python print_version.py`
 
 sample output:
-`
-3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]
-`
+`3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
 
 6. Cancel the job
 
-Once you're done with the node, exit the compute node:
-`
-exit
-`
+Once you're done with the node, exit the compute node using the command `exit`. The output should simply show:
+`logout`
 
-sample output:
-`
-logout
-`
-
-Then, release your job's allocated resources:
-`
-scancel [JobID]
-`
-
-There should be no output. The `squeue --me` command can be used to view your currently running jobs. 
+Then, release your job's allocated resources using `scancel [JobID]`. There should be no output. The `squeue --me` command can be used to view your currently running jobs. 
 
 **Note**: If you don't cancel the job, Slurm will release the allocated resources when the time requested for the job expires and you'll be automatically logged out of the compute node.
