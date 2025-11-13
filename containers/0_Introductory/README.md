@@ -8,12 +8,14 @@ Please refer to our [container documentation](https://docs.ccr.buffalo.edu/en/la
 ## Using a Python Docker image with Apptainer
 1. Start an interactive job
 
-**Note**: Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container. We recommend requesting an interactive job on a compute node to conduct this build process.
+Interactive jobs are used to pull containers because Apptainer is not available on the CCR login nodes and compile nodes may not provide enough resources for your container to build.
+
+Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
 See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
 `salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell`
 
-sample output:
+Sample output:
 ```
 salloc: Pending job allocation [JobID]
 salloc: job [JobID] queued and waiting for resources
@@ -28,11 +30,11 @@ Once the requested node is available, use the `srun` command to login to the com
 `srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login`
 
 sample output:
-`CCRUsername@cpn-d01-06:~$ `
+You should now be on the compute node allocated to you, so the command prompt should look like: `CCRRusername@cpn-d01-06:~$`
 
 2. Navigate to your build directory & set a temp directory for cache
 
-You should now be on the compute node allocated to you. In this example we're using our project directory for our build directory.
+In this example we're using our project directory for our build directory, where we must make a cache subdirectory and export the `APPTAINER_CACHEDIR` environment variable with the following commands:
 ```
 cd /projects/academic/[YourGroupName]/[CCRUsername]  
 mkdir cache  
@@ -54,7 +56,7 @@ In this example, we are using [`print_version.py`](./print_version.py), a Python
 Run the following command:
 `apptainer exec python.sif python print_version.py`
 
-sample output:
+Your output will look similar to `3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
 `3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
 
 6. Cancel the job
