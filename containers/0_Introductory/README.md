@@ -10,11 +10,6 @@ Please refer to our [container documentation](https://docs.ccr.buffalo.edu/en/la
 ## Using a Python Docker image with Apptainer
 1. Start an interactive job
 
-> [!NOTE]
-> Interactive jobs are used to pull containers because Apptainer is not available on the CCR login nodes and compile nodes may not provide enough resources for your container to build.
-> 
-> Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
-
 Request a job allocation from a login node:
 ```
 salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell
@@ -37,6 +32,8 @@ srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
 ```
 
 After connecting, you should notice your command prompt has changed from `CCRRusername@login1:~$` to `CCRRusername@cpn-d01-06:~$`, indicating you're now on the compute node allocated to you.
+
+> Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
 
 2. Navigate to your build directory & set a temp directory for cache
 
