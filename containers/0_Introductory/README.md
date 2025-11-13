@@ -13,24 +13,21 @@ Interactive jobs are used to pull containers because Apptainer is not available 
 Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
 See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
+Request a job allocation:
 ```
 salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell
 ```
 
 Sample output:
 
-`salloc: Pending job allocation [JobID]`
-
-`salloc: job [JobID] queued and waiting for resources`
-
-`salloc: job [JobID] has been allocated resources`
-
-`salloc: Granted job allocation [JobID]`
-
-`salloc: Waiting for resource configuration`
-
-`salloc: Nodes cpn-d01-06 are ready for job`
-
+```
+salloc: Pending job allocation [JobID]
+salloc: job [JobID] queued and waiting for resources
+salloc: job [JobID] has been allocated resources
+salloc: Granted job allocation [JobID]
+salloc: Waiting for resource configuration
+salloc: Nodes cpn-d01-06 are ready for job
+```
 
 Once the requested node is available, use the `srun` command to login to the compute node:
 ```
