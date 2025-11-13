@@ -68,7 +68,10 @@ Run the following command:
 apptainer exec python.sif python print_version.py
 ```
 
-Your output will look similar to `3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
+Your output will look similar to 
+```
+3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]
+```
 
 6. Cancel the job
 
@@ -81,3 +84,7 @@ scancel [JobID]
 
 > [!NOTE]
 > If you don't cancel the job, Slurm will release the allocated resources when the time requested for the job expires and you'll be automatically logged out of the compute node.
+
+## Additional Information
+
+- The [Placeholders](../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
