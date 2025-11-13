@@ -4,7 +4,7 @@ If you have an example you think would benefit users of the CCR community, you c
 
 1. [Fork this repo](https://github.com/ubccr/ccr-examples/fork)
 
-2. Clone your fork and enter it's directory:
+2. Clone your fork and enter its directory:
 
     ```bash
     git clone https://github.com/[YourUser]/ccr-examples.git
