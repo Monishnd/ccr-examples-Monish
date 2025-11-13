@@ -24,7 +24,7 @@ Keep examples organized in respective per example directories following the esta
 - Include a `README.md` file with clear and concise instructions on how to modify and reproduce the example.
 - Separate your `README` into sections and clearly ennumerate steps required to reproduce the example.
 - Avoid repetition by providing links to information already detailed in the [CCR documentation](https://docs.ccr.buffalo.edu/en/latest/) or other `README` files in this repository. For example, you do NOT need to explicitly provide details about [interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [accessing login nodes](https://docs.ccr.buffalo.edu/en/latest/hpc/login/#logging-in), or re-define [placeholders](/slurm/README.md#placeholders).
-- Do not include command prompts (e.g., `$`, `>`) inside code blocks for ease of copying code. If you feel that the change of command prompt is critical to user understanding, you can indicate what the prompts look like in the text preceeding the associated command.
+- Do not include command prompts (e.g., `$`, `>`) inside code blocks for ease of copying code. If you feel that the change of command prompt is critical to user understanding, you can indicate what the prompts look like in the text preceding the associated command.
     > Running the following command on a compute node will change your command prompt from `CCRusername@cpn-d01-06:~$` to `Apptainer>`, indicating that you're now in the Apptainer shell environment:
     >
     > ```bash
@@ -44,7 +44,7 @@ Commenting this out to come back to later:
 - Include as few files as possible to avoid clutter, but be sure everything needed to reproduce the example is provided.
 - Do not include large data sets, instead use `$ENV` variables to specify the path to data/supplemental files.
 - File names should be descriptive and concise with appropriate extensions, using a dash `-` to separate words if necessary.
-- Provide brief comments in separate lines preceeding the associated code.
+- Provide brief comments in separate lines preceding the associated code.
 - Comment lines in Slurm scripts should begin with `##   ` to clearly differentiate comments and Slurm constraints.
 
 ### Use of Variables
