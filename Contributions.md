@@ -21,22 +21,31 @@ Keep examples organized in respective per example directories following the esta
 
 ### README Files
 
-- Include a markdown `README.md` file with clear and concise instructions on how to modify and reproduce the example.
+- Include a `README.md` file with clear and concise instructions on how to modify and reproduce the example.
 - Separate your `README` into sections and clearly ennumerate steps required to reproduce the example.
-- Avoid repitition by providing links to information already detailed in the [CCR documentation](https://docs.ccr.buffalo.edu/en/latest/) or other `README` files in this repository.
-- Do not include command prompts (e.g., `$`, `>`) inside code blocks for ease of copying code. Instead, indicate what the prompt should look like in the preceeding text.
-- Separate command outputs into their own code blocks with preceeding statements that the user should see a *similar* result.
-- Stylize any commands outside of code blocks using code snippets.
+- Avoid repetition by providing links to information already detailed in the [CCR documentation](https://docs.ccr.buffalo.edu/en/latest/) or other `README` files in this repository. For example, you do NOT need to explicitly provide details about [interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [accessing login nodes](https://docs.ccr.buffalo.edu/en/latest/hpc/login/#logging-in), or re-define [placeholders](/slurm/README.md#placeholders).
+- Do not include command prompts (e.g., `$`, `>`) inside code blocks for ease of copying code. If you feel that the change of command prompt is critical to user understanding, you can indicate what the prompts look like in the preceeding text preceeding the associated command.
+    > Running the following command on a compute node will change your command prompt from `CCRusername@cpn-d01-06:~$` to `Apptainer>`, indicating that you're now in the Apptainer shell environment:
+    >
+    > ```bash
+    > apptainer shell r-demo.sif
+    > ```
+
+- Only provide command outputs if they're essential to the user's understanding, and separate them into their own clearly labeled code blocks.
+- Stylize any commands outside of code blocks using `code snippets`.
+- Use [alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) (note, warning, danger, important) to emphasize important points of your `README`. This can be particularly useful for calling out links to CCR documentation.
+<!-- 
+Commenting this out to come back to later:
 - Feel free to specify the syntax of your code blocks to enhance readability.
-- Use notes (note, warning, danger, important) to emphasize important points of your `README`. [See here for markdown syntax](https://python-markdown.github.io/extensions/admonition/).
+-->
 
 ### Additional Files
 
 - Include as few files as possible to avoid clutter, but be sure everything needed to reproduce the example is provided.
-- Do not include large data sets, instead use `$ENV` variables to specify the path to data/supplemental files. Co-ordinate with CCR Staff to ensure data is placed in a location that is accessible to all users.
+- Do not include large data sets, instead use `$ENV` variables to specify the path to data/supplemental files.
 - File names should be descriptive and concise with appropriate extensions, using a dash `-` to separate words if necessary.
 - Provide brief comments in separate lines preceeding the associated code.
-- Comment lines in `.bash` files should begin with `##   ` to clearly differentiate comments and Slurm constraints.
+- Comment lines in Slurm scripts should begin with `##   ` to clearly differentiate comments and Slurm constraints.
 
 ### Use of Variables
 
@@ -47,4 +56,4 @@ Keep examples organized in respective per example directories following the esta
 
 ## Reference Materials
 
-- For a nice overview of markdown syntax [see here](https://www.markdownguide.org/basic-syntax)
+- For a nice overview of GitHub's markdown syntax [see here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
