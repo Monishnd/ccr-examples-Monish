@@ -34,7 +34,13 @@ Once the requested node is available, use the `srun` command to login to the com
 srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
 ```
 
-You should now be on the compute node allocated to you, so the command prompt should look like: 
+After connecting, you should notice your command prompt has changed, indicating you're now on the compute node that was allocated to you:
+
+Before (login node):
+
+`CCRRusername@login1:~$`
+
+After (compute node):
 
 `CCRRusername@cpn-d01-06:~$`
 
@@ -42,12 +48,8 @@ You should now be on the compute node allocated to you, so the command prompt sh
 
 In this example we're using our project directory for our build directory, where we must make a cache subdirectory and export the `$APPTAINER_CACHEDIR` environment variable with the following commands:
 ```
-cd /projects/academic/[YourGroupName]/[CCRUsername]
-```  
-```
+cd /projects/academic/[YourGroupName]/[CCRUsername] 
 mkdir cache
-```
-```  
 export APPTAINER_CACHEDIR=/projects/academic/[YourGroupName]/[CCRUsername]/cache
 ```
    
@@ -68,7 +70,7 @@ Run the following command:
 apptainer exec python.sif python print_version.py
 ```
 
-Your output will look similar to 
+Your output will look similar to: 
 ```
 3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]
 ```
