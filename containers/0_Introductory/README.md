@@ -1,6 +1,8 @@
 # Introductory Python Container
 If you'd like to utilize a newer version of Python than what is installed in CCR's software repository or your workflow requires the use of GPUs, utilizing Python in a container environment is the ideal choice.
 
+For container use with GPUs, please refer to our [GPU container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#gpu-enabled-containers-with-apptainer).
+
 This example demonstrates how to download a Python Docker container, convert it to an Apptainer file, and run a simple script to extract the Python version.
 
 Please refer to our [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more information on using containers.
@@ -13,7 +15,7 @@ Please refer to our [container documentation](https://docs.ccr.buffalo.edu/en/la
 > 
 > Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
 
-Request a job allocation:
+Request a job allocation from a login node:
 ```
 salloc --cluster=[cluster] --partition=[partition] --qos=[qos] --mem=32GB --time=01:00:00 --no-shell
 ```
@@ -34,15 +36,7 @@ Once the requested node is available, use the `srun` command to login to the com
 srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
 ```
 
-After connecting, you should notice your command prompt has changed, indicating you're now on the compute node that was allocated to you:
-
-Before (login node):
-
-`CCRRusername@login1:~$`
-
-After (compute node):
-
-`CCRRusername@cpn-d01-06:~$`
+After connecting, you should notice your command prompt has changed from `CCRRusername@login1:~$` to `CCRRusername@cpn-d01-06:~$`, indicating you're now on the compute node allocated to you.
 
 2. Navigate to your build directory & set a temp directory for cache
 
@@ -70,10 +64,7 @@ Run the following command:
 apptainer exec python.sif python print_version.py
 ```
 
-Your output will look similar to: 
-```
-3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]
-```
+Your output will look similar to: `3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
 
 6. Cancel the job
 
