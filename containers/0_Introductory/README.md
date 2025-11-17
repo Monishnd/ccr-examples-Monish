@@ -33,6 +33,7 @@ srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
 
 After connecting, you should notice your command prompt has changed from `CCRRusername@login1:~$` to `CCRRusername@cpn-d01-06:~$`, indicating you're now on the compute node allocated to you.
 
+> [!NOTE]
 > Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [pulling containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#pulling-images).
 
 2. Navigate to your build directory & set a temp directory for cache
