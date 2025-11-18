@@ -34,10 +34,6 @@ Keep examples organized in respective per example directories following the esta
 - Only provide command outputs if they're essential to the user's understanding, and separate them into their own clearly labeled code blocks.
 - Stylize any commands outside of code blocks using `code snippets`.
 - Use [alerts](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts) (note, warning, danger, important) to emphasize important points of your `README`. This can be particularly useful for calling out links to CCR documentation.
-<!-- 
-Commenting this out to come back to later:
-- Feel free to specify the syntax of your code blocks to enhance readability.
--->
 
 ### Additional Files
 
