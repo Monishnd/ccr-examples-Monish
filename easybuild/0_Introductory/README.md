@@ -58,7 +58,7 @@ We can look for the existing SAMtools version in `ccrsoft/2023.01` recipe built 
 eb --search samtools
 ```
 
-Find a SAMtools recipe built with the `GCC 11.2.0` toolchain and update the dependencies section:
+Find a SAMtools recipe built with the `GCC 11.2.0` toolchain and update the dependencies section accordingly. Sample output:
 
 ```
 *  /cvmfs/soft.ccr.buffalo.edu/versions/2023.01/easybuild/software/Core/easybuild/4.9.4/easybuild/easyconfigs/s/SAMtools/SAMtools-1.16.1-GCC-11.2.0.eb
@@ -100,7 +100,7 @@ No missing modules!
 
 6. Easybuild is finding that all the dependencies are met and nothing else needs to be built so we can move forward with the install. Remove the dry run option, `-M`, and start the installation.
 
-**Important:** Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the --robot option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
+**Important:** Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the `--robot` option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
 
 ```
 eb SAMtools-1.18-GCC-11.2.0.eb
