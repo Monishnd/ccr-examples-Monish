@@ -8,19 +8,15 @@ This directory includes examples for building and rebuilding software with EasyB
 
 There are a few use cases in which you may want to use EasyBuild to install software in your own space (project space preferred over home directories):
 
-1. If you need a custom or modified build
+1. If you need a custom, modified build or a different release version
 2. If you need to install a nightly build, or a version of a software which does not have a release number
 3. If there isn't an existing EB recipe and you want to create your own
 4. If we at CCR are not allowed to install the package centrally for licensing reasons, such as some commercial software packages (Gaussian, Orca, VASP and Materials Studio in particular)
 
-On the contrary, you should not install software packages in your own space for the following reasons:
+> [!IMPORTANT]
+> We do NOT recommend users attempt to build their own compilers or toolchains. CUDA builds on our systems require expert intervention. Therefore, we recommend rather than building anything with CUDA, users utilize pre-built [NVIDIA containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#example-gpu-container-workflow).
 
-1. If you need a different release version (CCR Staff: Not completely sure about this)
-2. If you need a software package built using a different compiler, MPI or CUDA implementation
-
-Users can request software be installed by CCR staff by submitting a new issue in our software-layer GitHub respository. More information can be found [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#software-build-requests).
-
-When in doubt, please ask [CCR Help](https://docs.ccr.buffalo.edu/en/latest/help/) for advice.
+Users can request software be installed by CCR staff by submitting a new issue in our software-layer GitHub respository. More information can be found [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#software-build-requests). If you have any questions, please ask [CCR Help](https://docs.ccr.buffalo.edu/en/latest/help/) for advice.
 
 ## Elementary Example ([0_Introductory](./0_Introductory))
 

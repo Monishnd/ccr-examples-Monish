@@ -5,7 +5,8 @@ In this example, we'll go through the process of rebuilding `SAMtools-v1.18`, wh
 ## How to Rebuild
 
 > [!NOTE]
-> When using Easybuild, do NOT use the CCR login nodes. Always use a compile node or do this from a compute node in an OnDemand desktop session or interactive job. See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). These installations can use a decent amount of disk space so we recommend you use your project directory for all software installations.
+> When using Easybuild, do NOT use the CCR login nodes. Always use a compile node or do this from a compute node in an OnDemand desktop session or interactive job. See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission). 
+> These installations can use a decent amount of disk space so we recommend you use your project directory for all software installations. You'll need to set the `$CCR_BUILD_PREFIX` [environment variable](https://docs.ccr.buffalo.edu/en/latest/software/building/#building-modules-for-your-group) to point to your project directory, or else it will default to installing in your home directory.
 
 1. First, start by loading the Easybuild module and search for the existing `SAMtools-1.18-GCC-12.3.0` Easybuild (EB) recipe:
 
@@ -100,7 +101,8 @@ No missing modules!
 
 6. Easybuild is finding that all the dependencies are met and nothing else needs to be built so we can move forward with the install. Remove the dry run option, `-M`, and start the installation.
 
-**Important:** Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the `--robot` option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
+> [!WARNING] 
+> Easybuild can build dependencies for us. If this output of the dry run indiciated additional dependencies were needed, we can add the `--robot` option to the end of this installation command to instruct Easybuild to try to build the dependencies. Be careful with this though! You should not be building toolchains, compilers, or major software already installed by CCR like python, java, and other large packages unless you really know what you're doing.
 
 ```
 eb SAMtools-1.18-GCC-11.2.0.eb
@@ -136,7 +138,11 @@ Expected output:
 
 The above output indicates that the installation completed successfully and points us to the zipped log file of the build process.
 
-7. Now let's search for our module, load it, and look at the module to see where it's installed:
+7. Now let's search for our module:
+
+> [!NOTE]
+> To make your custom modules appear in `module avail`, `module spider` etc., you can set the `$CCR_CUSTOM_BUILD_PATHS` environment variable following the instructions outlined [here](https://docs.ccr.buffalo.edu/en/latest/software/building/#building-modules-for-your-group).
+> To ensure the path gets picked up on login, point it to `~/.ccr/modulepaths`.
 
 ```
 module spider samtools-1.18
