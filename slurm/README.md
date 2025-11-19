@@ -26,7 +26,7 @@ Portions of the example batch scripts which must be changed for the script to fu
 
 ## Getting Started ([0_Introductory/](./0_Introductory/README.md))
 
-This directory is designed to introduce new users to the fundamentals of submitting jobs on CCR's HPC clusters using Slurm. It provides simple, well-documented examples to help users understand key Slurm concepts and serves as a foundation before progressing to more advanced workflows. The example Slurm script [BasicExample.sh](./0_Introductory/BasicExample.sh) provides a minimalist template for submitting a job in an HPC environment. It demonstrates essential Slurm directives, such as cluster, partition, memory requirements, and more.
+This directory is designed to introduce new users to the fundamentals of submitting jobs on CCR's HPC clusters using Slurm. It provides simple, well-documented examples to help users understand key Slurm concepts and serves as a foundation before progressing to more advanced workflows. The example Slurm script [BasicExample.bash](./0_Introductory/BasicExample.bash) provides a minimalist template for submitting a job in an HPC environment. It demonstrates essential Slurm directives, such as cluster, partition, memory requirements, and more.
 
 ## Advanced Slurm Examples ([1_Advanced/](./1_Advanced/README.md))
 
