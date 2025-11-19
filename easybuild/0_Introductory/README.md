@@ -64,7 +64,7 @@ Find a SAMtools recipe built with the `GCC 11.2.0` toolchain and update the depe
 *  /cvmfs/soft.ccr.buffalo.edu/versions/2023.01/easybuild/software/Core/easybuild/4.9.4/easybuild/easyconfigs/s/SAMtools/SAMtools-1.16.1-GCC-11.2.0.eb
 ```
 
-5. Once we've updated any dependency versions, we can save the file and use the Easybuild dry run (-M) option to see if we've met all the dependencies and if not, which ones will Easybuild try to build for us. This will also tell us if we have an errors in the recipe file.
+5. Once we've updated any dependency versions, we can save the file and use the Easybuild dry run (`-M`) option to see if we've met all the dependencies and if not, which ones will Easybuild try to build for us. This will also tell us if we have an errors in the recipe file.
 
 ```
 eb -M SAMtools-1.18-GCC-11.2.0.eb
@@ -134,7 +134,7 @@ Expected output:
 == Temporary directory /tmp/eb-allkgxg7 has been removed.
 ```
 
-The above output indiactes that the installation completed successfully and points us to the zipped log file of the build process.
+The above output indicates that the installation completed successfully and points us to the zipped log file of the build process.
 
 7. Now let's search for our module, load it, and look at the module to see where it's installed:
 

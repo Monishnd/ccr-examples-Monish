@@ -23,7 +23,7 @@ CCR provides detailed performance metrics through Grafana charts, including GPU,
 - Access via Terminal: You need to query Slurm for the appropriate start and end times and get the node list. To do this, we provide a script that can be run in the terminal that creates the Grafana 
 URL for your job:
 ```
-ccr-jobview-url [jobid] [cluster]
+ccr-jobview-url [JobID] [cluster]
 ```
 Then you would paste the outputed link into your browser.
 
