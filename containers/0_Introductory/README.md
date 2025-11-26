@@ -45,7 +45,7 @@ mkdir cache
 export APPTAINER_CACHEDIR=/projects/academic/[YourGroupName]/[CCRUsername]/cache
 ```
    
-4. Pull the specified Docker Python Image 
+3. Pull the specified Docker Python Image 
    
 Use the `apptainer pull` command, specifying the target container file to be `python.sif`. The specified Python image is stored at `docker://python:3`.
 
@@ -53,7 +53,7 @@ Use the `apptainer pull` command, specifying the target container file to be `py
 apptainer pull python.sif docker://python:3
 ```
 
-5. Run script in container
+4. Run script in container
 
 In this example, we are using [`print_version.py`](./print_version.py), a Python script that simply prints the version of Python. Ensure you've copied the `print_version.py` file to your build directory.
 
@@ -64,7 +64,7 @@ apptainer exec python.sif python print_version.py
 
 Your output will look similar to: `3.14.0 (main, Oct 21 2025, 11:44:31) [GCC 14.2.0]`
 
-6. Cancel the job
+5. Cancel the job
 
 Once you're done with the node, use the `exit` command. Then, release your job's allocated resources by running  `scancel [JobID]`, where `[JobID]` can be obtained by the command `squeue --me`, which lists your currently running jobs.
 
