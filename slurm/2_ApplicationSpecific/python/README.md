@@ -10,7 +10,7 @@ Provided is an example of a serial Python program [fibonacci.py](./serial/fibona
 
 To run the Python script, simply submit the job to the scheduler from a login node with the following command:
 ```
-sbatch python-sp.sh
+sbatch python-sp.bash
 ```
 
 ## Parallel Python Tutorial
