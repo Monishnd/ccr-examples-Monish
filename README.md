@@ -22,6 +22,21 @@ In order to run any examples on the CCR clusters, the files must first be moved 
 
 After verifying that the desired example performs as expected when run as is, users are meant to modify the examples to suit their needs.  Information on what to modify and why can be found in associated `README` files, as well as in comments within the example files themselves.
 
+## Placeholders
+
+Portions of the example batch scripts which must be changed for the script to function are referred to as placeholders and denoted by square brackets in this repository. Replace the following placeholders in your script with details specific to your use case before submitting your job.
+
+| Placeholder             | Options |
+|-------------------------|-------------------------------------------|
+| `[cluster]`             | ub-hpc, faculty |
+| `[partition]`           | general-compute, debug, industry, scavenger, ub-laser, [other available options](https://docs.ccr.buffalo.edu/en/latest/hpc/clusters/#ub-hpc-compute-cluster) |
+| `[qos]`                 | Typically the same as `[partition]` - refer to [CCR docs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#slurm-directives-partitions-qos) for more information. |
+| `[SlurmAccountName]`    | Use the `slimits` command to see what accounts you have access to. If not specified, your default account will be used. |
+| `[CCRUsername]`         | Your CCR username |
+| `[YourGroupName]`       | The name of your group |
+| `[JobID]`               | Slurm JobID |
+| `[NodeID]`              | Compute NodeID |
+
 ## Cloning the Repository
 
 Login to a CCR login node or use the terminal app in OnDemand to access a login node.  
