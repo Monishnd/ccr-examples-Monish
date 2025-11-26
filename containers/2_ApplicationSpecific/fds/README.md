@@ -30,16 +30,16 @@ salloc: Pending job allocation 22013901
 salloc: job 22013901 queued and waiting for resources
 salloc: job 22013901 has been allocated resources
 salloc: Granted job allocation 22013901
-salloc: Nodes cpn-d01-39 are ready for job
+salloc: Nodes [NodeID] are ready for job
 
 CCRusername@login:~$ module load intel
 CCRusername@login:~$ export I_MPI_PMI_LIBRARY=/opt/software/slurm/lib64/libpmi.so
 CCRusername@login:~$ srun --jobid=22013901 mpirun -np 3 apptainer exec fds_6.7.9.sif fds radiator.fds  
  Starting FDS ...
 
- MPI Process      0 started on cpn-d01-39.core.ccr.buffalo.edu
- MPI Process      1 started on cpn-d01-39.core.ccr.buffalo.edu
- MPI Process      2 started on cpn-d01-39.core.ccr.buffalo.edu
+ MPI Process      0 started on [NodeID].core.ccr.buffalo.edu
+ MPI Process      1 started on [NodeID].core.ccr.buffalo.edu
+ MPI Process      2 started on [NodeID].core.ccr.buffalo.edu
 
  Reading FDS input file ...
 
