@@ -2,7 +2,7 @@
 
 This directory contains example Slurm batch job scripts for use on CCR's clusters. These examples are meant to supplement our official documentation on [running and monitoring jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/). Before using these scripts, it's important to understand the basics of batch computing as well as CCR-specific usage guidelines and limitations. Please refer to the full documentation for detailed instructions and best practices.
 
-At CCR you should use the bash shell for your Slurm batch scripts. The first line in each example (`#!/bin/bash -l`) is required. Slurm batch script files in this repository have a `.sh` extension, as a best practice. In bash scripts, lines beginning with `#` are treated as comments and ignored during execution. However, Slurm specifically looks for lines that start with `#SBATCH`, and these are interpreted as job directives.  
+At CCR you should use the bash shell for your Slurm batch scripts. The first line in each example (`#!/bin/bash -l`) is required. Slurm batch script files in this repository have a `.bash` extension, as a best practice. In bash scripts, lines beginning with `#` are treated as comments and ignored during execution. However, Slurm specifically looks for lines that start with `#SBATCH`, and these are interpreted as job directives.  
 
 **Important**: Do not remove the `#` in front of `SBATCH`; doing so will prevent Slurm from recognizing your job options. If you want to disable a specific directive without removing it, simply comment it out by adding an extra `#` (i.e.,`##SBATCH`).
 
