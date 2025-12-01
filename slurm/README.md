@@ -10,6 +10,21 @@ The [slurm-options.sh](slurm-options.sh) file in this directory provides a list 
 
 Be aware that the more specific you get when requesting resources on CCR's clusters, the fewer options the job scheduler has to place your job. When possible, it's best to only specify what you need to and let the job scheduler do it's job. If you're unsure what resources your program will require, we recommend starting small and [monitoring the progress](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#monitoring-jobs) of the job, then you can scale up. For more details, refer to the [official Slurm documentation](https://slurm.schedmd.com/documentation.html).
 
+## Placeholders
+
+This repository uses placeholders denoted by square brackets for values that need to be customized. Replace the following placeholders with details specific to your use case before using any commands or examples.
+
+| Placeholder             | Options |
+|-------------------------|-------------------------------------------|
+| `[cluster]`             | ub-hpc, faculty |
+| `[partition]`           | general-compute, debug, industry, scavenger, ub-laser, [other available options](https://docs.ccr.buffalo.edu/en/latest/hpc/clusters/#ub-hpc-compute-cluster) |
+| `[qos]`                 | Typically the same as `[partition]` - refer to [CCR docs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#slurm-directives-partitions-qos) for more information. |
+| `[SlurmAccountName]`    | Use the `slimits` command to see what accounts you have access to. If not specified, your default account will be used. |
+| `[CCRUsername]`         | Your CCR username |
+| `[YourGroupName]`       | Your project's group name (often PI username or company name) |
+| `[JobID]`               | Slurm JobID |
+| `[NodeID]`              | Compute NodeID |
+
 ## Getting Started ([0_Introductory/](./0_Introductory/README.md))
 
 This directory is designed to introduce new users to the fundamentals of submitting jobs on CCR's HPC clusters using Slurm. It provides simple, well-documented examples to help users understand key Slurm concepts and serves as a foundation before progressing to more advanced workflows. The example Slurm script [BasicExample.bash](./0_Introductory/BasicExample.bash) provides a minimalist template for submitting a job in an HPC environment. It demonstrates essential Slurm directives, such as cluster, partition, memory requirements, and more.
