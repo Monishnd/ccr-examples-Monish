@@ -8,34 +8,53 @@ Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/
 
 1. Start an interactive job
 
-Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.  This will allow you to test your build after completion as well.  Please refer to our documentation on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) for more information.  This is provide as an example only and not all users will have access to the resources in this example:  
+Request a job allocation from a login node:
+```
+salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=32GB --time=02:00:00
+```
+
+Sample output:
 
 ```
-$ salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=32GB --time=02:00:00
-salloc: Pending job allocation 19319338
-salloc: job 19319338 queued and waiting for resources
-salloc: job 19319338 has been allocated resources
-salloc: Granted job allocation 19319338
-salloc: Nodes cpn-h23-04 are ready for job
-CCRusername@cpn-h23-04:~$
-
+salloc: Pending job allocation [JobID]
+salloc: job [JobID] queued and waiting for resources
+salloc: job [JobID] has been allocated resources
+salloc: Granted job allocation [JobID]
+salloc: Waiting for resource configuration
+salloc: Nodes [NodeID] are ready for job
 ```
+
+Once the requested node is available, use the `srun` command to login to the compute node:
+```
+srun --jobid=[JobID] --export=HOME,TERM,SHELL --pty /bin/bash --login
+```
+
+After connecting, you should notice your command prompt has changed from `CCRRusername@login1:~$` to `CCRRusername@[NodeID]:~$`, indicating you're now on the compute node allocated to you.
+
+> [!NOTE]
+> Refer to the CCR documentation for more information on [running interactive jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission) and [building containers](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-images-with-apptainer).
 
 2. Navigate to your build directory & set a temp directory for cache  
 
-You should now be on the compute node allocated to you.  In this example we're using our project directory for our build directory. Ensure you've placed your `conda.def` and `environment.yml` file in your build directory  
+In this example we're using our project directory for our build directory. Ensure you've placed your `conda.def` and `environment.yml` file in your build directory. Make a cache subdirectory and export the `$APPTAINER_CACHEDIR` environment variable with the following commands:  
 
 ```
-CCRusername@cpn-h23-04:~$ cd /projects/academic/[YourGroupName]/[CCRusername]  
-CCRusername@cpn-h23-04:~$ mkdir cache  
-CCRusername@cpn-h23-04:~$ export APPTAINER_CACHEDIR=/projects/academic/[YourGroupName]/[CCRusername]/cache  
-
+cd /projects/academic/[YourGroupName]/[CCRUsername] 
+mkdir cache
+export APPTAINER_CACHEDIR=/projects/academic/[YourGroupName]/[CCRUsername]/cache
 ```
-
+   
 3. Build your container  
 
+Use the `apptainer build` command, specifying the target container file to be `conda-$(arch).sif`.
+
 ```
-CCRusername@cpn-h23-04:~$ apptainer build conda-$(arch).sif conda.def
+apptainer build conda-$(arch).sif conda.def
+```
+
+Sample output:
+
+```
 ...
 ...
 INFO:    Adding environment to container
@@ -43,27 +62,47 @@ INFO:    Creating SIF file...
 INFO:    Build complete: conda.sif
 ```
 
-NOTE: Whenever you modify the `environment.yml` file to add more Python packages to install via conda or pip, you will need to rebuild your container.  
+
+> [!WARNING]
+> Whenever you modify the `environment.yml` file to add more Python packages to install via conda or pip, you will need to rebuild your container.  
 
 ## Running the container  
 
-For our example, we have no additional conda packages installed.  However, we can test this container by running Python: 
+Ensure you are on a compute node and that you have copied the `conda.def` and `environment.yml` files to your build directory. 
 
+For our example, we have no additional conda packages installed.  However, we can test this container by running Python. 
+
+Run the following command:
 ```
-CCRusername@cpn-h23-04:~$ apptainer exec conda-$(arch).sif python
+apptainer exec conda-$(arch).sif python
+```
+
+Sample output:
+```
 Python 3.10.16 | packaged by conda-forge | (main, Apr  8 2025, 20:53:32) [GCC 13.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-Alternatively, you can first get shell access into the container and then run Python, as shown here:   
+Alternatively, you can first get shell access into the container and then run Python.
 
+Get shell access:
 ```
-CCRusername@cpn-h23-04:~$ apptainer shell conda-$(arch).sif
-Apptainer> python
+apptainer shell conda-$(arch).sif
+```
+
+Once in the container, run:
+```
+python
+```
+
+Sample output:
+```
 Python 3.10.16 | packaged by conda-forge | (main, Apr  8 2025, 20:53:32) [GCC 13.3.0] on linux
 Type "help", "copyright", "credits" or "license" for more information.
 >>>
 ```
 
-Please refer to the CCR [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more info on accessing project directories, using GPUs, and other important topics.
+## Additional Information
+
+- The [Placeholders](../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
