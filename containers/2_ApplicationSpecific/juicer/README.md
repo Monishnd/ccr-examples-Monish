@@ -3,12 +3,18 @@ This example goes over how to use Juicer at CCR. The most straightforward way wo
 
 ## Pulling container
 
-Instead of using the pre-built `Singularity` image, CCR recommends you pull the available `docker` image on CCR's systems. The commands to do so are:
+The Juicer software can be pulled from Docker Hub to the CCR's HPC environment using Apptainer. This process follows the same steps detailed in the [introductory container example](../../0_Introductory/README.md#pulling-the-container), which you can use as a guide. Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more information on using Apptainer.
+
+Log into a compute node, navigate to your project directory, and set a temporary directory for cache there.
+
+Once ready, pull the Juicer container from Docker Hub:
 
 ```
 export APPTAINER_CACHEDIR=/projects/academic/[YourGroupName]/[CCRusername]/cache
-apptainer pull juicer.sif docker://arimaxiang/arima_juicer
+apptainer pull juicer.sif docker://arimaxiang/arima_juicer:1.6
 ```
+
+After the pull completes, the Apptainer image will be saved as `juicer.sif` in your current working directory.  
 
 ## Running container
 
