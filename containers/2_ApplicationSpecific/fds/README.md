@@ -2,8 +2,6 @@
 
 The Fire Dynamics Simulator (FDS) is a large-eddy simulation (LES) code for low-speed flows, with an emphasis on smoke and heat transport from fires.  For more information on this program, visit the [website](https://pages.nist.gov/fds-smv/).
 
-This container includes Intel MPI Library 2021.6.  CCR's `ccrsoft/2023.01` [software environment](https://docs.ccr.buffalo.edu/en/latest/software/releases/#202301) includes a module for `intel/2022.00` which includes `impi 2021.5.0`  These two versions of MPI are alike enough that this container works when loading the `intel/2022.00` module.  However, the user should be aware with future versions of FDS and CCR's intel modules, that you must align MPI versions on the system with the container in order for them to work properly.  See [here](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-mpi-enabled-images) for more info.
-
 ## Pulling the container  
 
 The FDS software can be pulled from Docker Hub to the CCR's HPC environment using Apptainer. This process follows the same steps detailed in the [introductory container example](../../0_Introductory/README.md#pulling-the-container), which you can use as a guide. Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more information on using Apptainer.
@@ -19,12 +17,17 @@ apptainer pull docker://satcomx00/fds:6.7.9
 
 After the pull completes, the Apptainer image will be saved as `fds_6.7.9.sif` in your current working directory.  
 
+> [!WARNING]
+> This container includes Intel MPI Library 2021.6.  CCR's `ccrsoft/2023.01` [software environment](https://docs.ccr.buffalo.edu/en/latest/software/releases/#202301) includes a module for `intel/2022.00` which includes `impi 2021.5.0`  These two versions of MPI are alike enough that
+> this container works when loading the `intel/2022.00` module.  However, the user should be aware with future versions of FDS and CCR's intel modules, that you must align MPI versions on the system with the container in order for them to work properly.
+> 
+> See [here](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#building-mpi-enabled-images) for more info.
 
 ## Running the container image  
 
 You can run FDS either in an interactive job or non-interactively by using a batch script (recommended).
 
-The following information on running FDS is provided as an example only and not all users will have access to the resources in this example.  The [`radiator.fds`](radiator.fds) input file is taken from the FDS website and used as an example.  This will run on, at most, 3 tasks.  Your real world work may scale to more tasks.
+The following information on running FDS is provided as an example only.  The [`radiator.fds`](radiator.fds) input file is taken from the FDS website and used as an example.  This will run on, at most, 3 tasks.  Your real world work may scale to more tasks.
 
 FDS is capable of running across multiple nodes but this should only be utilized if your problem requires more than the number of CPUs in a compute node.  Running FDS across multiple nodes will increase the time it takes for your problem to compute.  The specifications for available compute nodes in CCR's UB-HPC cluster can be found [here](https://docs.ccr.buffalo.edu/en/latest/hpc/clusters/#ub-hpc-detailed-hardware-specifications).
 
