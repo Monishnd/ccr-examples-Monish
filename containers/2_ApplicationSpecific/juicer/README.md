@@ -2,7 +2,7 @@
 
 Juicer is a pipeline for generating and analyzing Hi-C maps. For more information and usage details, visit the [official Juicer GitHub repository](https://github.com/aidenlab/juicer).
 
-## Pulling container
+## Pulling the container
 
 The Juicer software can be pulled from Docker Hub to the CCR's HPC environment using Apptainer. This process follows the same steps detailed in the [introductory container example](../../0_Introductory/README.md#pulling-the-container), which you can use as a guide. Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/) for more information on using Apptainer.
 
@@ -20,7 +20,7 @@ After the pull completes, the Apptainer image will be saved as `juicer.sif` in y
 > [!NOTE]
 > Juicer containers are also listed on [GitHub](https://github.com/ArimaGenomics/Juicer_pipeline_containers), but CCR recommends using the pulling instructions shown here for the best compatibility with our environment.
 
-## Running container
+## Running the container
 
 With the container image pulled, you can run the Juicer software with the instructions from the GitHub repository. You can also find more detailed instructions for how to use Juicer in this [GitHub Repository](https://github.com/aidenlab/juicer/wiki/Usage).
 
