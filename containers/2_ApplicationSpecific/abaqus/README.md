@@ -11,7 +11,7 @@ The Abaqus container file can be found in this directory: `/util/software/contai
 > [!WARNING]
 > The Abaqus container file is quite large (10GB) so please be sure to copy it to a location where you have enough space (i.e. your project directory), or you can run the container from this location.
 >
-> You must be on a compute node to run containers. 
+> You must be on a compute or compile node to run containers. 
 
 You can run Abaqus either in an interactive job or non-interactively by using a batch script (recommended).
 
