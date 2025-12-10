@@ -2,11 +2,11 @@
 
 Abaqus is a software suite for finite element analysis and computer-aided engineering. 
 
-Users at CCR can simply run the existing container file we have provided, with no need to pull or build anything.
+At CCR, we provide an existing container file for Abaqus 2024.
 
 ## Running the container
 
-The Abaqus 2024 container file can be found in this directory: `/util/software/containers/x86_64/abaqus-2024.sif` which is accessible when logged into CCR's HPC environment.
+The Abaqus container file can be found in this directory: `/util/software/containers/x86_64/abaqus-2024.sif` which is accessible when logged into CCR's HPC environment.
 
 > [!WARNING]
 > The Abaqus container file is quite large (10GB) so please be sure to copy it to a location where you have enough space (i.e. your project directory), or you can run the container from this location.
