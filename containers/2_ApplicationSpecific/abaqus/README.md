@@ -16,6 +16,8 @@ You can run Abaqus either in an interactive job or non-interactively by using a 
 ### Batch script option
 A Slurm script [`abaqus-test.bash`](./abaqus-test.bash) is provided with all necessary configuration for running Abaqus as a batch job. Update the file paths and resource requests according to your needs and add the Abaqus options you need to use at the end of the Apptainer command line.
 
+The [Slurm README](../../../slurm/README.md) provides details on general Slurm usage.
+
 ### Interactive option
 
 Make sure you are on a compute node before running containers.  
