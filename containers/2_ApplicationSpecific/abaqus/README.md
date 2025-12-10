@@ -10,6 +10,8 @@ The Abaqus 2024 container file can be found in this directory: `/util/software/c
 
 > [!WARNING]
 > The Abaqus container file is quite large (10GB) so please be sure to copy it to a location where you have enough space (i.e. your project directory), or you can run the container from this location.
+>
+> You must be on a compute node to run containers. 
 
 You can run Abaqus either in an interactive job or non-interactively by using a batch script (recommended).
 
@@ -19,8 +21,6 @@ A Slurm script [`abaqus-test.bash`](./abaqus-test.bash) is provided with all nec
 The [Slurm README](../../../slurm/README.md) provides details on general Slurm usage.
 
 ### Interactive option
-
-Make sure you are on a compute node before running containers.  
 
 If you're unsure of the options to provide or want to run the application more interactively, you can use the `shell` option with Apptainer. This will drop you into the container and then you can work with Abaqus interactively. 
 ```
