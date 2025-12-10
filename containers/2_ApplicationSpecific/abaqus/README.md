@@ -70,7 +70,7 @@ If you need to use GPUs with Abaqus you'll need to request a [GPU node](https://
 
 For example, to run the Abaqus GUI on a GPU node, the command would be:
 ```
-apptainer exec /opt/software/nvidia:/opt/software/nvidia --nv /[path-to-container]/abaqus-2024.sif abaqus cae -mesa
+apptainer exec -B /opt/software/nvidia:/opt/software/nvidia --nv /[path-to-container]/abaqus-2024.sif abaqus cae -mesa
 ```
 
 > [!NOTE]
