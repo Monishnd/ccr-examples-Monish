@@ -2,12 +2,11 @@
 
 ## This file is intended to serve as a template to be downloaded and modified for your use case.
 ## For more information, refer to the following resources whenever referenced in the script-
-## README- https://github.com/ubccr/ccr-examples/tree/main/slurm/README.md
+## README- https://github.com/ubccr/ccr-examples/tree/main/README.md
 ## DOCUMENTATION- https://docs.ccr.buffalo.edu/en/latest/hpc/jobs
 
 ## Select a cluster, partition, qos and account that is appropriate for your use case
-## Available options and more details are provided in CCR's documentation:
-##   https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#slurm-directives-partitions-qos
+## Available options and more details are provided in README
 #SBATCH --cluster="[cluster]"
 #SBATCH --partition="[partition]"
 #SBATCH --qos="[qos]"
@@ -51,10 +50,10 @@ module load gcc/11.2.0 openmpi/4.1.1 gromacs/2023.1-CUDA-11.8.0
 ## load the newer UCX module
 module load ucx/1.13.1
 
-### Environment varibles for OpenMPI over Infiniband
+### Environment variables for OpenMPI over Infiniband
 export OMPI_MCA_pml=ucx && export OMPI_MCA_btl="self,vader,ofi"
 
-### Environment varibles for PMIx (srun --mpi=pmix [...])
+### Environment variables for PMIx (srun --mpi=pmix [...])
 export PMIX_MCA_psec=native && export PMIX_MCA_gds=hash
 
 ## Fetch the tests
