@@ -37,7 +37,7 @@ abridged sample output:
 > [...]
 > ```
 
-NOTE: You can add other Slurm options to eiher script.
+NOTE: You can add other Slurm options to either script.
 For example, if you want to run on an H100 GPU (with 80GB RAM) add the
 following to the script:
 
@@ -64,7 +64,7 @@ first run completes:
 sbatch ./slurm_BindCraft_with_PyRosetta_example.bash
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Submitted batch job 21507613 on cluster ub-hpc
@@ -77,7 +77,7 @@ Submit the "follow on" job using the above Slurm Job ID
 sbatch --dependency=afterany:21507613 ./slurm_BindCraft_with_PyRosetta_example.bash
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Submitted batch job 21507614 on cluster ub-hpc
@@ -99,7 +99,7 @@ e.g.
 cat slurm-21507613.out
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Running BindCraft on compute node: cpn-h25-29
@@ -139,7 +139,7 @@ sample output:
 cat slurm-21507614.out
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Running BindCraft on compute node: cpn-q07-20
@@ -203,7 +203,7 @@ Job 21507613 runtime info:
 sacct --format="Elapsed" -j 21507614
 ```
 
-Job 21507614 tuntime info:
+Job 21507614 runtime info:
 
 > ```
 >    Elapsed 

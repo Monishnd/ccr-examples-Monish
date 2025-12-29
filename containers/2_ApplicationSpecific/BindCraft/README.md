@@ -18,7 +18,7 @@ salloc --cluster=ub-hpc --partition=debug --qos=debug --account="[SlurmAccountNa
  --mem=0 --exclusive --time=01:00:00
 ```
 
-sample outout:
+Sample output:
 
 > ```
 > salloc: Pending job allocation 19781052
@@ -42,8 +42,8 @@ cd /projects/academic/[YourGroupName]/BindCraft
 There are two sample .def files, FreeBindCraft.def and FreeBindCraft_with_PyRosetta.def
 The former does not install PyRosetta, the latter does.
 To build and use the PyRosetta version you must have a PyRosetta license.
-You must eaither complete the application for a non commercial license or purchase
-a commercial licenses - see [PyRosetta Licensing](https://els2.comotion.uw.edu/product/pyrosetta) for more info.
+You must either complete the application for a non commercial license or purchase
+a commercial license - see [PyRosetta Licensing](https://els2.comotion.uw.edu/product/pyrosetta) for more info.
 
 The following example uses the non PyRosetta version.
 To build with PyRosetta see [Build with PyRosetta](./BUILD_with_PyRosetta.md)
@@ -192,7 +192,7 @@ Sample output:
 >   --interactive         Force interactive mode to collect target settings and options
 > ```
 
-See the [EXAMPLE file](./EXAMPLE.md) for more info.
+See the [EXAMPLE file](./EXAMPLES.md) for more info.
 
 ## Sample Slurm scripts
 

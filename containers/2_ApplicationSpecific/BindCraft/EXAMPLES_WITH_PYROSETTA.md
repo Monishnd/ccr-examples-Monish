@@ -36,7 +36,7 @@ mkdir -p ./input ./output
 ```
 
 Start the container:
-Note that the AlpahFold 2 params files are mounted on /app/params inside the container.
+Note that the AlphaFold 2 params files are mounted on /app/params inside the container.
 
 ```
 apptainer shell \
@@ -86,7 +86,7 @@ ls -l /work/input/PDL1.pdb
 Sample output:
 
 > ```
--rw-rw-r-- 1 [CCRusername] nogroup 74686 Sep 11 14:20 /work/input/PDL1.pdb
+> -rw-rw-r-- 1 [CCRusername] nogroup 74686 Sep 11 14:20 /work/input/PDL1.pdb
 > ```
 
 ## Run OpenMM relax Sanity test
@@ -184,7 +184,7 @@ Start an interactive job with a GPU e.g.
 NOTE: BindCraft only uses one GPU (however, see [Using Multiple GPUs](#using-multiple-gpus) for work
 rounds with a Slurm job)
 
-For this example, the runtime is set to eigth hours, however such a run
+For this example, the runtime is set to eight hours, however such a run
 is better suited to a Slurm job.
 The job will not complete in this time, but, as per:
 https://github.com/martinpacesa/BindCraft/issues/258
@@ -209,7 +209,7 @@ Sample output:
 > ```
 
 Note the Slurm job id, "21409013" in this case, if you want to monitor the
-GPU utilizataion
+GPU utilization
 
 Change to your BindCraft directory
 
@@ -391,7 +391,7 @@ You can monitor the GPU utilization while the job is running.  You need the
 Slurm job id for this ("squeue --me" will list your Slurm jobs.)
 
 Log into vortex in another terminal window and from there use the Slurm
-jod id in the following command:
+job id in the following command:
 
 ```
 srun --jobid="21409013" --export=HOME,TERM,SHELL --pty /bin/bash --login
