@@ -37,7 +37,7 @@ abridged sample output:
 > [...]
 > ```
 
-NOTE: You can add other Slurm options to eiher script.
+NOTE: You can add other Slurm options to either script.
 For example, if you want to run on an H100 GPU (with 80GB RAM) add the
 following to the script:
 
@@ -52,7 +52,7 @@ of) three days
 > #SBATCH --time=3-00:00:00
 > ```
 
-The job will be incomplete ater this runtime, but resubmitting the job 
+The job will be incomplete after this runtime, but resubmitting the job 
 (i.e. re-running /app/bindcraft.py with the identical settings file)
 will continue the BindCraft run and should complete with the next run.
 
@@ -64,7 +64,7 @@ first run completes:
 sbatch ./slurm_BindCraft_example.bash
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Submitted batch job 21435656 on cluster ub-hpc
@@ -77,7 +77,7 @@ Submit the "follow on" job using the above Slurm Job ID
 sbatch --dependency=afterany:21435656 ./slurm_BindCraft_example.bash
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Submitted batch job 21438459 on cluster ub-hpc
@@ -99,20 +99,20 @@ e.g.
 cat slurm-21435656.out
 ```
 
-sample output:
+Sample output:
 
 > ```
-Running BindCraft on compute node: cpn-q09-20
-GPU info:
-GPU 0: Tesla V100-PCIE-32GB (UUID: GPU-54282c05-37f5-ccab-1be0-20bfd411efdd)
-[...]
-Stage 1: Test Logits
-1 models [0] recycles 1 hard 0 soft 0.02 temp 1 loss 14.04 helix 2.08 pae 0.86 i_pae 0.88 con 4.90 i_con 4.19 plddt 0.30 ptm 0.48 i_ptm 0.10 rg 16.75
-2 models [3] recycles 1 hard 0 soft 0.04 temp 1 loss 11.30 helix 0.97 pae 0.75 i_pae 0.79 con 4.18 i_con 4.01 plddt 0.43 ptm 0.49 i_ptm 0.11 rg 9.76
-[...]
-70 models [4] recycles 1 hard 0 soft 0.80 temp 1 loss 5.04 helix 1.57 pae 0.32 i_pae 0.30 con 2.38 i_con 2.86 plddt 0.73 ptm 0.66 i_ptm 0.49 rg 0.22
-71 models [0] recycles 1 hard 0 soft 0.84 temp 1 loss 5.49 helix 1.54 pae 0.37 i_pae 0.45 con 2.35 i_con 3.27 plddt 0.73 ptm 0.58 i_ptm 0.31 rg 0.26
-slurmstepd: error: *** JOB 21435656 ON cpn-q09-20 CANCELLED AT 2025-09-12T14:16:49 DUE TO TIME LIMIT ***
+> Running BindCraft on compute node: cpn-q09-20
+> GPU info:
+> GPU 0: Tesla V100-PCIE-32GB (UUID: GPU-54282c05-37f5-ccab-1be0-20bfd411efdd)
+> [...]
+> Stage 1: Test Logits
+> 1 models [0] recycles 1 hard 0 soft 0.02 temp 1 loss 14.04 helix 2.08 pae 0.86 i_pae 0.88 con 4.90 i_con 4.19 plddt 0.30 ptm 0.48 i_ptm 0.10 rg 16.75
+> 2 models [3] recycles 1 hard 0 soft 0.04 temp 1 loss 11.30 helix 0.97 pae 0.75 i_pae 0.79 con 4.18 i_con 4.01 plddt 0.43 ptm 0.49 i_ptm 0.11 rg 9.76
+> [...]
+> 70 models [4] recycles 1 hard 0 soft 0.80 temp 1 loss 5.04 helix 1.57 pae 0.32 i_pae 0.30 con 2.38 i_con 2.86 plddt 0.73 ptm 0.66 i_ptm 0.49 rg 0.22
+> 71 models [0] recycles 1 hard 0 soft 0.84 temp 1 loss 5.49 helix 1.54 pae 0.37 i_pae 0.45 con 2.35 i_con 3.27 plddt 0.73 ptm 0.58 i_ptm 0.31 rg 0.26
+> slurmstepd: error: *** JOB 21435656 ON cpn-q09-20 CANCELLED AT 2025-09-12T14:16:49 DUE TO TIME LIMIT ***
 > ```
 
 Note that, as expected, this job exceeded the three day walltime
@@ -121,7 +121,7 @@ Note that, as expected, this job exceeded the three day walltime
 cat slurm-21438459.out
 ```
 
-sample output:
+Sample output:
 
 > ```
 > Running BindCraft on compute node: cpn-q07-24

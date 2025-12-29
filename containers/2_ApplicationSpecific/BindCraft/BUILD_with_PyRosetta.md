@@ -1,8 +1,8 @@
 # Build the BindCraft container with PyRosetta
 
 To build and use the PyRosetta version you must have a PyRosetta license.
-You must eaither complete the application for a non commercial license or purchase
-a commercial licenses - see [PyRosetta Licensing](https://els2.comotion.uw.edu/product/pyrosetta) for more info.
+You must either complete the application for a non commercial license or purchase
+a commercial license - see [PyRosetta Licensing](https://els2.comotion.uw.edu/product/pyrosetta) for more info.
 
 ## Building the container
 
@@ -13,7 +13,7 @@ salloc --cluster=ub-hpc --partition=debug --qos=debug --account="[SlurmAccountNa
  --mem=0 --exclusive --time=01:00:00
 ```
 
-sample outout:
+Sample output:
 
 > ```
 > salloc: Pending job allocation 19781052
