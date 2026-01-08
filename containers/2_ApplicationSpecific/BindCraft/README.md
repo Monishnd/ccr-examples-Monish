@@ -39,7 +39,7 @@ Change to your BindCraft directory
 cd /projects/academic/[YourGroupName]/BindCraft
 ```
 
-There are two sample .def files, FreeBindCraft.def and FreeBindCraft_with_PyRosetta.def
+There are two sample .def files, [FreeBindCraft.def](./FreeBindCraft.def) and [FreeBindCraft_with_PyRosetta.def](./FreeBindCraft_with_PyRosetta.def)
 The former does not install PyRosetta, the latter does.
 To build and use the PyRosetta version you must have a PyRosetta license.
 You must either complete the application for a non commercial license or purchase

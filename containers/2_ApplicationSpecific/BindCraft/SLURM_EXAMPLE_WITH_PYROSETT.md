@@ -6,7 +6,7 @@ Change to your BindCraft directory
 cd /projects/academic/[YourGroupName]/BindCraft
 ```
 
-Copy the sample Slurm script "slurm_BindCraft_with_PyRosetta_example.bash" to
+Copy the sample Slurm script [slurm_BindCraft_with_PyRosetta_example.bash](./slurm_BindCraft_with_PyRosetta_example.bash) to
 this directory then modify for your use case.
 
 You should change the SLURM cluster, partition, qos and account; then change
