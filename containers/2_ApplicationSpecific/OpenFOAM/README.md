@@ -9,8 +9,8 @@ Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/
 
 1. Start an interactive job
 
-Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.<br/>
-See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
+> [!IMPORTANT]
+> Apptainer is not available on the CCR login nodes and the compile nodes may not provide enough resources for you to build a container.  We recommend requesting an interactive job on a compute node to conduct this build process.<br/> See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission)
 
 ```
 salloc --cluster=ub-hpc --partition=debug --qos=debug --mem=64GB --time=01:00:00
@@ -131,4 +131,4 @@ Slurm script examples:
 
 [OpenFOAM with "srun"](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/main/containers/2_ApplicationSpecific/OpenFOAM/slurm_OpenFOAM_example.bash)
 
-See the [OpenFOAM website][https://openfoam.org) and the [OpenFOAM version 13 User Guide](https://doc.cfd.direct/openfoam/user-guide-v13/index) for more information on OpenFOAM
+See the [OpenFOAM website](https://openfoam.org) and the [OpenFOAM version 13 User Guide](https://doc.cfd.direct/openfoam/user-guide-v13/index) for more information on OpenFOAM

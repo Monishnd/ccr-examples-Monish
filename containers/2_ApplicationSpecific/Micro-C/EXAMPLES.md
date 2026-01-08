@@ -3,20 +3,19 @@
 The following examples assume you have started an interactive Slurm session with multiple cores in the job e.g.
 
 ```
-$ salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --exclusive --time=10:00:00
+salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --exclusive --time=10:00:00
 ```
 
 ...and started the container like this:
 
 ```
-$ apptainer shell -B /util:/util,/scratch:/scratch,/vscratch:/vscratch,/projects:/projects Micro-C-$(arch).sif
-Apptainer>
+apptainer shell -B /util:/util,/scratch:/scratch,/vscratch:/vscratch,/projects:/projects Micro-C-$(arch).sif
 ```
 
 Note: /util is mounted because there are datafiles already downloaded in the
 /util/software/data/Micro-C  and /util/software/data/HiChIP  directories
 
-**All the following commands are run from the Apptainer> prompt**
+**All the following commands are run from the "Apptainer>" prompt**
 
 ## Pre-Alignment
 
@@ -27,8 +26,8 @@ ln -s /util/software/data/Micro-C/hg38.fasta
 ln -s /util/software/data/Micro-C/hg38.fasta.chrom.sizes
 ```
 
-NOTE: These are the small 2M reads data sets - ONLY FOR TESTING
-      use the 800M reads data sets for all other use cases
+> [!NOTE]
+> These are the small 2M reads data sets - ONLY FOR TESTING use the 800M reads data sets for all other use cases
 
 ```
 ln -s /util/software/data/Micro-C/MicroC_2M_R1.fastq
@@ -64,13 +63,13 @@ From this file we generate the hg38.genome file:
 cut -f1,2 hg38.fasta.fai > hg38.genome
 ```
 
-NOTE: The following step takes about an hour and 10 minutes to run:
+- The following step takes about an hour and 10 minutes to run:
 
 ```
 bwa index hg38.fasta
 ```
 
-samlple command output:
+sample command output:
 
 > ```
 > [bwa_index] Pack FASTA... 25.22 sec
@@ -205,7 +204,7 @@ This generates four files:
 get_qc.py -p stats.txt 
 ```
 
-sample commadn output:
+sample command output:
 
 > ```
 > Total Read Pairs                              2,000,000  100%
@@ -235,10 +234,8 @@ This gives an error output:
 > max count before zero is less than min required count (4) duplicates removed
 > ```
 
-This web page:
-  https://github.com/nugentechnologies/NuMetWG
-suggests that the above error can be resolved by using samtools to filter multiple alignments.
-Unfortunately, no example was provided
+This web page: https://github.com/nugentechnologies/NuMetWG suggests that the above error can be resolved by using samtools to filter multiple alignments.
+Unfortunately, no example was provided.
 
 
 # ChiP enrichment
@@ -279,7 +276,7 @@ sample output:
 > Observed/Expected ratio for reads in 2000 bp around center of peaks  1.27
 > ```
 
-Generating the entichment image
+Generating the enrichment image
 
 ```
 plot_chip_enrichment.py -bam mapped.PT.bam -peaks ENCFF017XLW.bed -output enrichment.png
@@ -305,11 +302,8 @@ This generates the file enrichment.png
 
 ## Generating HiC contact maps using Juicer tools
 
-NOTE: there is a bug in hic_tools with valid headers from a valid
-      pairix format file, so we have to trim out headers other than
-      "## pairs" and "#columns"
- see:
-   https://github.com/aidenlab/HiCTools/issues/13
+> [!NOTE]
+> There is a bug in hic_tools with valid headers from a valid pairix format file, so we have to trim out headers other than "## pairs" and "#columns" see: https://github.com/aidenlab/HiCTools/issues/13
 
 so we trim all other headers from the mapped.pairs file:
 
@@ -479,13 +473,11 @@ This generates a file coverage.bw
 > 35M coverage.bw
 > ```
 
-In CCR's [OnDemand portal](https://ondemand.ccr.buffalo.edu) you can view this bigwig file
-(once you have started the container) with:
+In CCR's [OnDemand portal](https://ondemand.ccr.buffalo.edu) you can view this bigwig file (once you have started the container) with:
 
 ```
 igv.sh coverage.bw
 ```
-
 
 ## Differential Analysis
 
