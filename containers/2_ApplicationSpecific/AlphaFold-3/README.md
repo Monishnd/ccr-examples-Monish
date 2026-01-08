@@ -1,7 +1,7 @@
 # Example AlphaFold 3 container
 
 > [!NOTE]
-> AlphaFold 3 requeres a model parameters file.  
+> AlphaFold 3 requires a model parameters file.  
 > You must request the file with [this form](https://forms.gle/svvpY4u2jsHEwWYS6) and agree to the software [terms of use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
 > If you are granted access to the file, Google will email you a download link.
 
@@ -185,8 +185,8 @@ See the [EXAMPLES file](./EXAMPLES.md) for more info.
 Slurm script examples:
 
 ### x86_64 example
-[AlphaFold 3 Slurm Data Pipeline example](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/AlphaFold-3/containers/2_ApplicationSpecific/AlphaFold-3/slurm_AlphaFold-3_Data_Pipeline_example.bash)  
-[AlphaFold 3 Slurm Inference example](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/AlphaFold-3/containers/2_ApplicationSpecific/AlphaFold-3/slurm_AlphaFold-3_Inference_example.bash)
+[AlphaFold 3 Slurm Data Pipeline example](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/main/containers/2_ApplicationSpecific/AlphaFold-3/slurm_AlphaFold-3_Data_Pipeline_example.bash)  
+[AlphaFold 3 Slurm Inference example](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/main/containers/2_ApplicationSpecific/AlphaFold-3/slurm_AlphaFold-3_Inference_example.bash)
 
 ### Grace Hopper (GH200) GPU example
 [AlphaFold 3 Slurm (x86_64) Data Pipeline example](https://raw.githubusercontent.com/ubccr/ccr-examples/refs/heads/main/containers/2_ApplicationSpecific/AlphaFold-3/slurm_GH200_AlphaFold-3_Data_Pipeline_example.bash)  
