@@ -17,12 +17,12 @@ salloc --cluster=ub-hpc --partition=debug --qos=debug --exclusive --time=01:00:0
 
 Sample output:
 ```
-salloc: Pending job allocation 19781052
-salloc: job 19781052 queued and waiting for resources
-salloc: job 19781052 has been allocated resources
-salloc: Granted job allocation 19781052
-salloc: Nodes cpn-i14-39 are ready for job
-CCRusername@cpn-i14-39:~$
+salloc: Pending job allocation [JobID]
+salloc: job [JobID] queued and waiting for resources
+salloc: job [JobID] has been allocated resources
+salloc: Granted job allocation [JobID]
+salloc: Nodes [NodeID] are ready for job
+CCRusername@[NodeID]:~$
 ```
 
 2. Navigate to your build directory & set a temp directory for cache

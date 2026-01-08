@@ -49,12 +49,12 @@ salloc --cluster=ub-hpc --partition=debug --qos=debug --mem=0 --exclusive --time
 sample outout:
 
 > ```
-> salloc: Pending job allocation 19781052
-> salloc: job 19781052 queued and waiting for resources
-> salloc: job 19781052 has been allocated resources
+> salloc: Pending job allocation [JobID]
+> salloc: job [JobID] queued and waiting for resources
+> salloc: job [JobID] has been allocated resources
 > salloc: Granted job allocation 19781052
-> salloc: Nodes cpn-i14-39 are ready for job
-> CCRusername@cpn-i14-39:~$ 
+> salloc: Nodes [NodeID] are ready for job
+> CCRusername@[NodeID]:~$ 
 > ```
 
 2. Navigate to your build directory and use the Slurm job local temporary directory for cache
