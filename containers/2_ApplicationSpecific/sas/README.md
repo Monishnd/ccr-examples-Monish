@@ -45,7 +45,7 @@ In this example, `~/myjob.sas` is a SAS script in your home directory and `~/sas
 > /[path-to-container]/sas94.sif /usr/local/SASHome/SASFoundation/9.4/sas ~/myjob.sas -log ~/sasoutput.log
 > ```
 >
-> See our documentation on [file access](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#file-access) for more information.
+> See our documentation on [file access](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#file-access) for additional details and reference.
 
 
 ## SAS GUI
