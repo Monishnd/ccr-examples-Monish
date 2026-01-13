@@ -56,6 +56,8 @@ See the [Abaqus documentation](https://docs.software.vt.edu/abaqusv2024/English/
 > -B /scratch:/scratch,/projects/academic/[YourGroupName]:/projects/academic/[YourGroupName] \
 > /[path-to-container]/abaqus-2024.sif abaqus [options]
 > ```
+>
+> > See our documentation on [file access](https://docs.ccr.buffalo.edu/en/latest/howto/containerization/#file-access) for more information.
 
 ### Running the Abaqus GUI
 
