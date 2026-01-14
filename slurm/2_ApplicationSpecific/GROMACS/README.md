@@ -2,26 +2,26 @@
 
 GROMACS is an open-source software suite for high-performance molecular dynamics and output analysis.
 
-Provided in this repository are several example GROMACS Slurm jobs. GROMACS can make use of CPUs and (for certain tasks) GPUs. The GPU version of GROMACS supports both CPU only and CPU/GPU use cases, so all the examples use the GPU version of GROMACS.
+Provided in this repository is a [slurm_GROMACS_benchmark_example.bash](./slurm_GROMACS_benchmark_example.bash) with multiple GROMACS command examples for different configurations. GROMACS can make use of CPUs and (for certain tasks) GPUs. The GPU version of GROMACS supports both CPU only and CPU/GPU use cases, so the provided example uses the GPU version of GROMACS.
 
-All provided examples use the GROMACS benchmarks.
+## How to use
 
-> [!IMPORTANT]
-> The `water-cut1.0_GMX50_bare/0000.65` test included in these examples fails. We believe the test needs to be larger to run on the allocated resources.
+The provided example does not include any input data by default. This is intentional, so users can customize the workflow and run simulations with their own dataset while becoming familiar with GROMACS. 
 
-## Example Scripts
+For a test run, you can download the benchmark data from the [GROMACS benchmark webiste](http://ftp.gromacs.org/pub/benchmarks/water_GMX50_bare.tar.gz) and use it as a sample. Once downloaded, the dataset only needs to be fetched once and can be used for multiple test runs.
 
-- One node CPU: [slurm_GROMACS_benchmark_one_node_CPU.bash](./slurm_GROMACS_benchmark_one_node_CPU.bash)
+You can generate a `bench.tpr` file for each `pme.mdp` file included in the dataset using the following command in a loop:
+```
+gmx_mpi grompp -f pme.mdp  -o bench.tpr
+```
+Then you can run the corresponding GROMCAS commands in the loop. The script [slurm_GROMACS_benchmark_example.bash](./slurm_GROMACS_benchmark_example.bash) included in this directory contains multiple GROMACS commands (commented out) for different CPU, GPU configurations. When testing a specific configuration, make sure to uncomment only the command you're using and comment out the others.
 
-- Two nodes, CPU: [slurm_GROMACS_benchmark_two_nodes_CPU.bash](./slurm_GROMACS_benchmark_two_nodes_CPU.bash)
-
-- One node, One GPU: [slurm_GROMACS_benchmark_one_node_one_GPU.bash](./slurm_GROMACS_benchmark_one_node_one_GPU.bash)
-
-- One node, Two GPUs: [slurm_GROMACS_benchmark_one_node_two_GPUs.bash](./slurm_GROMACS_benchmark_one_node_two_GPUs.bash)
+> [!NOTE]
+> The `water-cut1.0_GMX50_bare/0000.65` test fails. We believe the test needs to be larger to run on the allocated resources.
 
 ## Additional Information
 
 - Refer to the [official GROMACS documentation](https://manual.gromacs.org/) for detailed information about GROMACS.
 - The [Slurm README](../../README.md) provides details on general Slurm usage.
-- The [Placeholders](../../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
-- The [slurm-options.sh](../slurm-options.sh) file outlines commonly used `#SBATCH` directives with their descriptions.
+- The [Placeholders](../../../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
+- The [slurm-options.bash](../../slurm-options.bash) file outlines commonly used `#SBATCH` directives with their descriptions.
