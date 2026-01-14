@@ -4,6 +4,7 @@
 ##   For more information, refer to the following resources whenever referenced in the script-
 ##   README- https://github.com/ubccr/ccr-examples/tree/main/README.md
 ##   DOCUMENTATION- https://docs.ccr.buffalo.edu/en/latest/hpc/jobs
+##   GROMACS README- https://github.com/ubccr/ccr-examples/tree/main/slurm/2_ApplicationSpecific/GROMACS/README.md
 ##   GPU DOCUMENTATION- https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#slurm-directives-partitions-qos
 
 ##   Select a cluster, partition, qos and account that is appropriate for your use case
@@ -27,6 +28,9 @@
 ## If using more than 1 node, use this constraint:
 ##SBATCH --constraint="[SAPPHIRE-RAPIDS-IB|ICE-LAKE-IB|CASCADE-LAKE-IB|EMERALD-RAPIDS-IB]"
 
+#SBATCH --job-name=water-1536
+#SBATCH --output=gromacs.out
+
 echo "SLURM_JOB_ID="$SLURM_JOB_ID
 echo "SLURM_JOB_NODELIST"=$SLURM_JOB_NODELIST
 echo "SLURM_NNODES"=$SLURM_NNODES
@@ -40,7 +44,7 @@ echo "Launch GROMACS with srun"
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 export | grep SLURM
 
-## Fetch the data
+## Fetch the data (Refer to GROMACS README for more details)
 
 ## CPU single node
 gmx mdrun -ntmpi ${SLURM_NTASKS} -ntomp ${SLURM_CPUS_PER_TASK} -resethway -npme 0 -notunepme -noconfout -nsteps 1000 -v -s  bench.tpr

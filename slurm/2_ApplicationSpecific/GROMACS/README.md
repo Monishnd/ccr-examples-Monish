@@ -8,7 +8,7 @@ Provided in this repository is a [slurm_GROMACS_benchmark_example.bash](./slurm_
 
 The provided example does not include any input data by default. This is intentional, so users can customize the workflow and run simulations with their own dataset while becoming familiar with GROMACS. 
 
-For a test run, you can download the benchmark data (GMX50) from the [GROMACS benchmark webiste](http://ftp.gromacs.org/pub/benchmarks) and use it as a sample. Once downloaded, the dataset only needs to be fetched once and can be used for multiple test runs.
+For a test run, you can download the benchmark data (`water_GMX50`) from the [GROMACS benchmark webiste](http://ftp.gromacs.org/pub/benchmarks) and use it as a sample. Once downloaded, the dataset only needs to be fetched once and can be used for multiple test runs.
 
 You can generate a `bench.tpr` file for each `pme.mdp` file included in the dataset using the following command in a loop:
 ```
