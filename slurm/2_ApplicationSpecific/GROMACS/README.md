@@ -8,20 +8,20 @@ Provided in this repository is a [slurm_GROMACS_benchmark_example.bash](./slurm_
 
 The provided example does not include any input data by default. This is intentional, so users can customize the workflow and run simulations with their own dataset while becoming familiar with GROMACS. 
 
-For a test run, you can download the benchmark data from the [GROMACS benchmark webiste](http://ftp.gromacs.org/pub/benchmarks/water_GMX50_bare.tar.gz) and use it as a sample. Once downloaded, the dataset only needs to be fetched once and can be used for multiple test runs.
+For a test run, you can download the benchmark data (GMX50) from the [GROMACS benchmark webiste](http://ftp.gromacs.org/pub/benchmarks) and use it as a sample. Once downloaded, the dataset only needs to be fetched once and can be used for multiple test runs.
 
 You can generate a `bench.tpr` file for each `pme.mdp` file included in the dataset using the following command in a loop:
 ```
 gmx_mpi grompp -f pme.mdp  -o bench.tpr
 ```
-Then you can run the corresponding GROMCAS commands in the loop. The script [slurm_GROMACS_benchmark_example.bash](./slurm_GROMACS_benchmark_example.bash) included in this directory contains multiple GROMACS commands (commented out) for different CPU, GPU configurations. When testing a specific configuration, make sure to uncomment only the command you're using and comment out the others.
+Then you can run the corresponding GROMCAS command in the loop. The script [slurm_GROMACS_benchmark_example.bash](./slurm_GROMACS_benchmark_example.bash) included in this directory contains multiple GROMACS commands (commented out) for different CPU, GPU configurations. When testing a specific configuration, make sure to leave out the command you're using and comment out the others.
 
 > [!NOTE]
 > The `water-cut1.0_GMX50_bare/0000.65` test fails. We believe the test needs to be larger to run on the allocated resources.
 
 ## Additional Information
 
-- Refer to the [official GROMACS documentation](https://manual.gromacs.org/) for detailed information about GROMACS.
+- Refer to the [official GROMACS documentation](https://manual.gromacs.org/) and [open benchmarking](https://openbenchmarking.org/test/pts/gromacs) for detailed information about GROMACS.
 - The [Slurm README](../../README.md) provides details on general Slurm usage.
 - The [Placeholders](../../../README.md#placeholders) section lists the available options for each placeholder used in the example scripts.
 - The [slurm-options.bash](../../slurm-options.bash) file outlines commonly used `#SBATCH` directives with their descriptions.
