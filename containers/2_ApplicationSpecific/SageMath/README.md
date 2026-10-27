@@ -50,12 +50,12 @@ INFO:    Creating SIF file...
 
 ## Run the container
 
-4. Cancel the previous interactive job and start a fresh one, e.g.
+Cancel the previous interactive job and start a fresh one, e.g.
 ```
 salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=128GB --nodes=1 --cpus-per-task=1 --tasks-per-node=32 --time=03:00:00
 ```
 
-5. Setup the temporary files directory and run the container
+4. Setup the temporary files directory and run the container
 ```
 export APPTAINER_TMPDIR="${SLURMTMPDIR}"
 apptainer run --nv --no-env=XDG_DATA_DIRS \
@@ -70,7 +70,7 @@ Expected prompt:
 sage>
 ```
 
-6. Verify SageMath works as expected using basic commands
+5. Verify SageMath works as expected using basic commands
 ```
 2+3
 # Expected output: 5
