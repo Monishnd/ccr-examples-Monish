@@ -78,4 +78,4 @@ print(sqrt(4)==2)
 # Expected output: True
 ```
 
-Refer to the official [SageMath](https://www.sagemath.org/) website for additional information on SageMath.
+Refer to the official [SageMath](https://www.sagemath.org/) website for additional information on using SageMath.
