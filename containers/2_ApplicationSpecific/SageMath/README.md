@@ -13,7 +13,7 @@ Please refer to CCR's [container documentation](https://docs.ccr.buffalo.edu/en/
 > See CCR docs for more info on [running jobs](https://docs.ccr.buffalo.edu/en/latest/hpc/jobs/#interactive-job-submission).
 
 ```
-salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=16GB --exclusive --time=02:00:00
+salloc --cluster=ub-hpc --partition=debug --qos=debug --mem=16GB --exclusive --time=01:00:00
 ```
 
 Sample output:
@@ -40,41 +40,47 @@ apptainer pull sagemath-10.10-$(arch).sif docker://sagemath/sagemath:10.10
 
 Expected output:
 ```
+INFO:    Starting build...
 ...
-...
-INFO:    Adding environment to container
+INFO:    Inserting Apptainer configuration...
 INFO:    Creating SIF file...
 ```
 > [!NOTE]
-> Building the SageMath container will take ~45 minutes.
+> Building the SageMath container takes ~10 minutes.
 
 ## Run the container
 
 Cancel the previous interactive job and start a fresh one, e.g.
 ```
-salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=128GB --nodes=1 --cpus-per-task=1 --tasks-per-node=32 --time=03:00:00
+salloc --cluster=ub-hpc --partition=general-compute --qos=general-compute --mem=16GB --nodes=1 --cpus-per-task=1 --tasks-per-node=32 --time=01:00:00
 ```
 
 4. Set up the temporary files directory and run the container
 ```
 export APPTAINER_TMPDIR="${SLURMTMPDIR}"
+```
+```
 apptainer run --nv --no-env=XDG_DATA_DIRS \
  --bind /util:/util,/scratch:/scratch \
- --bind /projects/academic/[YourGroupName]:/projects/academic/[YourGroupName] \
- /projects/academic/[YourGroupName]/[CCRUsername]/SageMath/sagemath-10.10-x86_64.sif \
+ --bind /projects/academic/[YourGroupName]:/projects/academic/[YourGroupName]
+ sagemath-10.10-x86_64.sif \
  sage
 ```
 
 Expected prompt:
 ```
-sage>
+┌────────────────────────────────────────────────────────────────────┐
+│ SageMath version 10.10, Release Date: 2026-09-28                  │
+│ Using Python 3.12.3. Type "help()" for help.                      │
+└────────────────────────────────────────────────────────────────────┘
+sage:
 ```
 
 5. Verify SageMath works as expected
 ```
-2+3
+sage: 2+3
 # Expected output: 5
-print(sqrt(4)==2)
+sage: print(sqrt(4)==2)
 # Expected output: True
 ```
 
