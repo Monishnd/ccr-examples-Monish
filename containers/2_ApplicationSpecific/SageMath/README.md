@@ -1,4 +1,4 @@
-# Example SageMath container
+# Example SageMath Container
 
 In this example we'll demonstrate how to download and run the containerized version of [SageMath](https://www.sagemath.org/), a free open-source mathematics software system, on CCR's clusters using a container image available on [DockerHub](https://hub.docker.com/r/sagemath/sagemath?tag=10.10).
 
@@ -62,16 +62,14 @@ export APPTAINER_TMPDIR="${SLURMTMPDIR}"
 ```
 apptainer run --nv --no-env=XDG_DATA_DIRS \
  --bind /util:/util,/scratch:/scratch \
- --bind /projects/academic/[YourGroupName]:/projects/academic/[YourGroupName]
- sagemath-10.10-x86_64.sif \
- sage
+ --bind /projects/academic/[YourGroupName]:/projects/academic/[YourGroupName] sagemath-10.10-x86_64.sif
 ```
 
 Expected prompt:
 ```
 ┌────────────────────────────────────────────────────────────────────┐
-│ SageMath version 10.10, Release Date: 2026-09-28                  │
-│ Using Python 3.12.3. Type "help()" for help.                      │
+│ SageMath version 10.10, Release Date: 2026-09-28                   │
+│ Using Python 3.12.3. Type "help()" for help.                       │
 └────────────────────────────────────────────────────────────────────┘
 sage:
 ```
